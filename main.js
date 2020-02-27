@@ -1,13 +1,14 @@
 
-// window.onload = function() {
-//     oneUser()
-// }
-  
-const assert = require('assert');
+window.onload = function() {
+    oneUser(window.fetch)
+}
+
+
+// const assert = require('assert');
 
 
 function oneUser(i) {
-    fetch('https://randomuser.me/api/')
+   fetch('https://randomuser.me/api/')
   .then((response) => {
       return response.json();
   })
@@ -58,16 +59,3 @@ function oneUser(i) {
       oneUser(i);
   }
   
-
-  // Tests
-
-  if (typeof describe === 'function'){
-
-    describe('newPlayer', () => {
-      it('should make a player from the person list', () => {
-          let newPlayer = new Player(true, 'newPlayer.name');
-            assert.equal(newPlayer.id, true);
-        });
-    });
-
-  }
